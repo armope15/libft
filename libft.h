@@ -6,7 +6,7 @@
 /*   By: armolina < armolina@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 20:08:37 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/15 10:21:53 by armolina         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:40:55 by armolina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char				*ft_strdup(const char *s1);
 char				*ft_strjoin(char const *s1, char const *s2);
 
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
+
+char 				*ft_strcat(char *dest, const char *src);
 
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
