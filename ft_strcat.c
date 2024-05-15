@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armolina < armolina@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 19:24:42 by armolina          #+#    #+#             */
-/*   Updated: 2024/05/15 10:06:30 by armolina         ###   ########.fr       */
+/*   Created: 2024/05/15 10:22:20 by armolina          #+#    #+#             */
+/*   Updated: 2024/05/15 10:22:21 by armolina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+char *ft_strcat(char *dest, const char *src) {
+    char *dest_ptr = dest;
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	int		i;
-	//size_t	l;
-	char	*str;
+    // Avanzar dest_ptr hasta el final de la cadena dest
+    while (*dest_ptr != '\0') {
+        dest_ptr++;
+    }
 
-	if (!s || !f)
-		return (NULL);
-	//l = ft_strlen(s);
-	str = (char *) malloc (sizeof(char) * (ft_strlen((char *) s) + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+    // Copiar cada carácter de src a dest_ptr, incluyendo el carácter nulo de terminación
+    while ((*dest_ptr++ = *src++) != '\0')
+        ;
+
+    return dest;
 }

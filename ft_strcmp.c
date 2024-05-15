@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armolina < armolina@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 19:24:42 by armolina          #+#    #+#             */
-/*   Updated: 2024/05/15 10:06:30 by armolina         ###   ########.fr       */
+/*   Created: 2024/05/15 08:32:28 by armolina          #+#    #+#             */
+/*   Updated: 2024/05/15 08:32:37 by armolina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	int		i;
-	//size_t	l;
-	char	*str;
-
-	if (!s || !f)
-		return (NULL);
-	//l = ft_strlen(s);
-	str = (char *) malloc (sizeof(char) * (ft_strlen((char *) s) + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+int ft_strcmp(const char *s1, const char *s2) {
+    while (*s1 && (*s1 == *s2)) {
+        s1++;
+        s2++;
+    }
+    return (unsigned char)*s1 - (unsigned char)*s2;
 }
